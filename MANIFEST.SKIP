@@ -1,0 +1,10 @@
+^.git/
+\bblib
+\bpm_to_blib
+\bTODO
+^Makefile$
+^MANIFEST\.bak
+^MANIFEST\.SKIP
+^Makefile.old
+.*?\.tar(?:\.gz|)
+*komodo*
