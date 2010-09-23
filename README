@@ -14,13 +14,13 @@ SYNOPSIS
 
         # use lib for my local libraries somewhere around here
         # ...
-    
+
         build_requires 'Module::Find';
         require Module::Find;
-    
+
         include 'FooPackage';
         include $_ foreach Module::Find::findallmod 'FooPackage::*';
-    
+
         # so on and so forth
 
     Why? You may ask when Module::Install has a support for glob matching of
@@ -111,6 +111,10 @@ SUPPORT
 
         <http://search.cpan.org/dist/Module-Install-AggressiveInclude/>
 
+    *   GitHub
+
+        <http://github.com/jmmills/module-install-agressiveinclude>
+
 ACKNOWLEDGEMENTS
 LICENSE AND COPYRIGHT
     Copyright 2010 Jason M Mills.
@@ -120,4 +124,3 @@ LICENSE AND COPYRIGHT
     by the Free Software Foundation; or the Artistic License.
 
     See http://dev.perl.org/licenses/ for more information.
-

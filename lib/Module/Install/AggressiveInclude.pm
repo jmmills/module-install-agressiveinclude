@@ -30,13 +30,13 @@ dependencies I find my self writing this Makefile.PL code a lot:
 
     # use lib for my local libraries somewhere around here
     # ...
-    
+
     build_requires 'Module::Find';
     require Module::Find;
-    
+
     include 'FooPackage';
     include $_ foreach Module::Find::findallmod 'FooPackage::*';
-    
+
     # so on and so forth
 
 Why? You may ask when L<Module::Install> has a support for glob matching of
@@ -56,7 +56,7 @@ namespace:
     FooPackage::Gamma
     FooPackage::Gamma::I
     FooPackage::Gamma::II
-    
+
 If we use L<Module::Install>'s include function like this:
 
     include 'FooPackage::*';
@@ -86,12 +86,12 @@ Aggressively include PACKAGE and all the modules/packages that fall under it
 sub include_aggressive {
     my $self = shift;
     my $package = shift;
-    
+
     my @r = (
         $self->include($package),
         $self->include_findallmod($package)
     );
-    
+
     return @r;
 }
 
@@ -121,7 +121,7 @@ Ties L<Module::Find>::findsubmod to L<Module::Install>::include.
 
 sub include_findsubmod {
     my $self = shift;
-    
+
     return map {
         $self->include($_)
     } $self->_include_mf_method( 'findsubmod', @_);
@@ -188,6 +188,10 @@ L<http://cpanratings.perl.org/d/Module-Install-AggressiveInclude>
 =item * Search CPAN
 
 L<http://search.cpan.org/dist/Module-Install-AggressiveInclude/>
+
+=item * GitHut
+
+L<http://github.com/jmmills/module-install-agressiveinclude>
 
 =back
 
